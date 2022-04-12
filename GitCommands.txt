@@ -41,3 +41,21 @@ Create a new repository on git and use repository url to add remote repository r
 Step 7) Push the local repository changes to remote repository.
 Command : git push -u origin master
 In the command, the origin is your default remote repository name and '-u' flag is upstream, which is equivalent to '-set-upstream' and the master is the branch.
+
+Advance:
+1) Create a new branch.
+Command : git branch <branch name>
+
+2) Switch between the branch
+Command : git checkout <branch name>
+
+3) Merge the branch
+Command : git merge <branch name>
+
+4) Push the changes to master
+Command : git push –u origin master
+
+5) After merging the new branch to the master branch, new branch is no longer required. So you can delete that branch.
+Command :
+Delete from local - git branch –d <branch name>
+Delete from remote - git push origin –delete <branch name>
