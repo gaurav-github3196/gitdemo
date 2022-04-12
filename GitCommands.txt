@@ -59,3 +59,46 @@ Command : git push –u origin master
 Command :
 Delete from local - git branch –d <branch name>
 Delete from remote - git push origin –delete <branch name>
+
+Merge conflicts:
+Scenario 1: Pick one or the other
+If you want to keep local version of excel file then simply use following code:
+git checkout --ours <file name>
+git add <file name>
+git commit -m "Choosing file from local repository to resolve conflict"
+
+If you want to keep remote version of excel file then simply use following code:
+git checkout --theirs <file name>
+git add <file name>
+git commit -m "Choosing file from master branch to resolve conflict"
+
+
+Scenario 2: Merge content of both files
+1) Run following command :
+git mergetool
+
+result (if merge tool is not configured):
+
+This message is displayed because 'merge.tool' is not configured.
+See 'git mergetool --tool-help' or 'git help config' for more details.
+'git mergetool' will now attempt to use one of the following tools:
+tortoisemerge emerge vimdiff
+Merging:
+contact_list.xlsm
+
+Normal merge conflict for 'contact_list.xlsm':
+  {local}: modified file
+  {remote}: modified file
+Hit return to start merge resolution tool (vimdiff):
+
+
+2) Now simply hit Ctrl-C which will terminate instead of trying to open the files. If you look at your folder, you have now four additional files next to excel file (where conflict occurred)
+e.g:
+contact_list_BACKUP_8576.xlsm
+contact_list_BASE_8576.xlsm
+contact_list_LOCAL_8576.xlsm
+contact_list_REMOTE_8576.xlsm
+
+3) Make changes in your local file (contact_list.xlsm). Once we’re happy with the combined contact_list.xlsm, simply run the usual commands:
+git add contact_list.xlsm
+git commit -m "resolved merge conflicts"
