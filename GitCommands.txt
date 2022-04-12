@@ -1,0 +1,5 @@
+To start with git from scratch:
+
+1) Working copy : This is refer to the project that you are working on you local machine.
+2) Staging area : Once you are done with your project, move your files in which you have done changes and wanted to be part of your next commit in staging area.
+3) Local repository : 
