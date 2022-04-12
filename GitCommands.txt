@@ -2,4 +2,42 @@ To start with git from scratch:
 
 1) Working copy : This is refer to the project that you are working on you local machine.
 2) Staging area : Once you are done with your project, move your files in which you have done changes and wanted to be part of your next commit in staging area.
-3) Local repository : 
+3) Local repository : Once the all required files have been moved to staging area, commit those changes in local repository. It helps you to maintain the version control on local machine.
+4) Remote repository : Similar to local repository, it maintains version control on remote server. 
+
+
+Beginer flow:
+Step 1) Create local repository
+Command : git init
+It creates empty repository on your local machine that is .git folder.
+
+Step 2) Track the status of files.
+Command : git status
+This commands compare your working copy and local repository, based on that you may find the following stages of a file in working directory.
+Untracked files : These files are newly created and never committed in local repository.
+Modified files : Files in which changes are done and not committed.
+
+Step 3) Add files in staging area
+Command : git add <file name>
+This commands add files in stagin area.
+Differenet ways to use add command :
+1) git add : To add a specific list of files to staging area.
+2) git add --all : To add all files of current directory to staging area.
+3) git add docs/ : To add all files in a particular directory to staging area.
+4) git add *.txt : To add text files (or any specific extension files) to staging area.
+
+Step 4) Configure username and email to authorize the identity.
+Command : 
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
+
+Step 5) Commit your changes to local repository.
+Command : git commit -m "Commit message"
+
+Step 6) Add a new remote repository.
+Command : git remote add origin <remote repository url>
+Create a new repository on git and use repository url to add remote repository reference to your project.
+
+Step 7) Push the local repository changes to remote repository.
+Command : git push -u origin master
+In the command, the origin is your default remote repository name and '-u' flag is upstream, which is equivalent to '-set-upstream' and the master is the branch.
